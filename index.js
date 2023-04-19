@@ -1,4 +1,4 @@
-function standardize(voucher) {
+const standardize = (voucher) => {
   return {
     region: "VN",
     data: {
@@ -10,9 +10,9 @@ function standardize(voucher) {
       is_rollover: true,
     },
   };
-}
+};
 
-async function registerVoucher(voucher) {
+const registerVoucher = async (voucher) => {
   return await fetch(
     "https://admin.promotion.shopee.vn/api/gateway/v1/voucher/admin/create_quota_top_up_task",
     {
@@ -29,9 +29,9 @@ async function registerVoucher(voucher) {
       body: JSON.stringify(voucher),
     }
   );
-}
+};
 
-async function registerVouchers(vouchers) {
+const registerVouchers = async (vouchers) => {
   return await Promise.all(
     vouchers.map(async (voucher) => {
       var standardized_voucher = standardize(voucher);
@@ -46,4 +46,4 @@ async function registerVouchers(vouchers) {
       };
     })
   );
-}
+};
