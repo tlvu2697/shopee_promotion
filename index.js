@@ -47,3 +47,5 @@ async function registerVouchers(vouchers) {
     })
   );
 }
+
+module.exports = { standardize, registerVoucher, registerVouchers };
