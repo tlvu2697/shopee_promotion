@@ -18,8 +18,6 @@ const registerVoucher = async (voucher) => {
     {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        authority: "admin.promotion.shopee.vn",
         accept: "*/*",
         "accept-language": "en-US,en;q=0.9",
         "content-type": "application/json",
